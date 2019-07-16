@@ -1,0 +1,8 @@
+prefix=/home/odin/ros_testing/roswiimote/devel
+
+Name: wiimote_state_estimation
+Description: Description of wiimote_state_estimation
+Version: 0.0.0
+Cflags: -I/home/odin/ros_testing/roswiimote/src/wiimote_state_estimation/include
+Libs: -L/home/odin/ros_testing/roswiimote/devel/lib 
+Requires: message_runtime roscpp std_msgs

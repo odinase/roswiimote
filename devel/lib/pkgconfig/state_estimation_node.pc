@@ -1,0 +1,8 @@
+prefix=/home/odin/ros_testing/roswiimote/devel
+
+Name: state_estimation_node
+Description: Description of state_estimation_node
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/odin/ros_testing/roswiimote/devel/lib 
+Requires: 

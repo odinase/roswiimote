@@ -1,0 +1,2 @@
+wiimote_state_estimation
+-DCATKIN_DEVEL_PREFIX=/home/odin/ros_testing/roswiimote/devel -DCMAKE_INSTALL_PREFIX=/home/odin/ros_testing/roswiimote/install -G Unix Makefiles

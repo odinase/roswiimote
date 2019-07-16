@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/odin/ros_testing/roswiimote/install/setup.sh
