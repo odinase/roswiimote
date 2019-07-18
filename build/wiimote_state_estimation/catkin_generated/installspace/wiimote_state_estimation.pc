@@ -5,4 +5,4 @@ Description: Description of wiimote_state_estimation
 Version: 0.0.0
 Cflags: -I/home/odin/ros_testing/roswiimote/install/include
 Libs: -L/home/odin/ros_testing/roswiimote/install/lib 
-Requires: message_runtime roscpp std_msgs
+Requires: message_runtime roscpp std_msgs sensor_msgs

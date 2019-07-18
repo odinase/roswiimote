@@ -60,15 +60,15 @@ include wiimote_state_estimation/CMakeFiles/kf.dir/flags.make
 wiimote_state_estimation/CMakeFiles/kf.dir/src/kf.cpp.o: wiimote_state_estimation/CMakeFiles/kf.dir/flags.make
 wiimote_state_estimation/CMakeFiles/kf.dir/src/kf.cpp.o: /home/odin/ros_testing/roswiimote/src/wiimote_state_estimation/src/kf.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/odin/ros_testing/roswiimote/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object wiimote_state_estimation/CMakeFiles/kf.dir/src/kf.cpp.o"
-	cd /home/odin/ros_testing/roswiimote/build/wiimote_state_estimation && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/kf.dir/src/kf.cpp.o -c /home/odin/ros_testing/roswiimote/src/wiimote_state_estimation/src/kf.cpp
+	cd /home/odin/ros_testing/roswiimote/build/wiimote_state_estimation && /usr/bin/g++-7   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/kf.dir/src/kf.cpp.o -c /home/odin/ros_testing/roswiimote/src/wiimote_state_estimation/src/kf.cpp
 
 wiimote_state_estimation/CMakeFiles/kf.dir/src/kf.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/kf.dir/src/kf.cpp.i"
-	cd /home/odin/ros_testing/roswiimote/build/wiimote_state_estimation && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/odin/ros_testing/roswiimote/src/wiimote_state_estimation/src/kf.cpp > CMakeFiles/kf.dir/src/kf.cpp.i
+	cd /home/odin/ros_testing/roswiimote/build/wiimote_state_estimation && /usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/odin/ros_testing/roswiimote/src/wiimote_state_estimation/src/kf.cpp > CMakeFiles/kf.dir/src/kf.cpp.i
 
 wiimote_state_estimation/CMakeFiles/kf.dir/src/kf.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/kf.dir/src/kf.cpp.s"
-	cd /home/odin/ros_testing/roswiimote/build/wiimote_state_estimation && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/odin/ros_testing/roswiimote/src/wiimote_state_estimation/src/kf.cpp -o CMakeFiles/kf.dir/src/kf.cpp.s
+	cd /home/odin/ros_testing/roswiimote/build/wiimote_state_estimation && /usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/odin/ros_testing/roswiimote/src/wiimote_state_estimation/src/kf.cpp -o CMakeFiles/kf.dir/src/kf.cpp.s
 
 wiimote_state_estimation/CMakeFiles/kf.dir/src/kf.cpp.o.requires:
 

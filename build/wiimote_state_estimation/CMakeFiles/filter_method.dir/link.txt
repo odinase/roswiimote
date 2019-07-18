@@ -1,0 +1,1 @@
+/usr/bin/g++-7  -fPIC   -shared -Wl,-soname,libfilter_method.so -o /home/odin/ros_testing/roswiimote/devel/lib/libfilter_method.so CMakeFiles/filter_method.dir/src/filter_method.cpp.o 

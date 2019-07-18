@@ -1,7 +1,8 @@
 #ifndef WIIMOTE_STATE_ESTIMATION_KF_H
 #define WIIMOTE_STATE_ESTIMATION_KF_H
 
-#include <Eigen/Sparse>
+#include <Eigen/Dense>
+#include "wiimote_state_estimation/filter_method.h"
 
 /**
  * Template class that uses the linear Kalman Filter algorithm to filter noisy measurement data.
@@ -10,7 +11,7 @@
  * @param NZ Number of measurements
  */
 template <unsigned int NX, unsigned int NU, unsigned int NZ>
-class KalmanFilter
+class KalmanFilter : public FilterMethod<NX, NU, NZ>
 {
 public:
   /**
@@ -31,36 +32,26 @@ public:
                const Eigen::Matrix<double, NX, NX> &R,
                const Eigen::Matrix<double, NZ, NZ> &Q);
 
+  KalmanFilter() = default;
+
   /**
    * Run one iteration of the Kalman Filter algorithm, given a current input and measurement.
    * @param u Current input.
    * @param z Current measurement.
    */
-  void iterate(const Eigen::Matrix<double, NU, 1> &u, const Eigen::Matrix<double, NZ, 1> &z);
-
-  /**
-   * Get current a priori state.
-   * @return const Eigen::Matrix<double, NX, 1>& Constant reference to the internal x_pri.
-   */
-  const Eigen::Matrix<double, NX, 1> &getState_pri() const { return x_pri; }
-
-  /**
-   * Get current a priori covariance matrix.
-   * @return const Eigen::Matrix<double, NX, NX>& Constant reference to the internal S_pri.
-   */
-  const Eigen::Matrix<double, NX, NX> &getCoVar_pri() const { return S_pri; }
+  virtual void iterate(const Eigen::Matrix<double, NU, 1> &u, const Eigen::Matrix<double, NZ, 1> &z) override;
 
   /**
    * Get current a posteriori state.
    * @return const Eigen::Matrix<double, NX, 1>& Constant reference to the internal x_post.
    */
-  const Eigen::Matrix<double, NX, 1> &getState_post() const { return x_post; }
+  virtual const Eigen::Matrix<double, NX, 1> &getState() const override { return x_post; }
 
   /**
    * Get current a posteriori covariance matrix.
    * @return const Eigen::Matrix<double, NX, 1>& Constant reference to the internal S_post.
    */
-  const Eigen::Matrix<double, NX, NX> &getCoVar_post() const { return S_post; }
+  virtual const Eigen::Matrix<double, NX, NX> &getCoVar() const override { return S_post; }
 
 private:
   Eigen::Matrix<double, NX, 1> x_pri;
@@ -124,7 +115,7 @@ void KalmanFilter<NX, NU, NZ>::update_S_post()
 template <unsigned int NX, unsigned int NU, unsigned int NZ>
 void KalmanFilter<NX, NU, NZ>::update_K()
 {
-  K = S_pri * C.transpose() * (C * S_pri * C.transpose() + Q).inverse());
+  K = S_pri * C.transpose() * (C * S_pri * C.transpose() + Q).inverse();
 }
 
 template <unsigned int NX, unsigned int NU, unsigned int NZ>

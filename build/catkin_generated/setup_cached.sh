@@ -7,9 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/odin/ros_testing/roswiimote/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/odin/ros_testing/roswiimote/devel/lib:$LD_LIBRARY_PATH"
-export PKG_CONFIG_PATH="/home/odin/ros_testing/roswiimote/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/home/odin/ros_testing/roswiimote/build"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/odin/ros_testing/roswiimote/devel/share/common-lisp"
-export ROS_PACKAGE_PATH="/home/odin/ros_testing/roswiimote/src:$ROS_PACKAGE_PATH"

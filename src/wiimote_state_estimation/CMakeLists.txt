@@ -1,13 +1,15 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(wiimote_state_estimation)
 
-add_compile_options(-std=c++17)
+SET(CMAKE_CXX_COMPILER /usr/bin/g++-7)
+add_compile_options(-std=c++17 -Wno-ignored-attributes)
 
 find_package(cmake_modules REQUIRED)
 find_package(catkin REQUIRED COMPONENTS
   message_generation
   roscpp
   std_msgs
+  sensor_msgs
   Eigen3
 )
 
@@ -33,8 +35,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 catkin_package(
   INCLUDE_DIRS include
-  CATKIN_DEPENDS message_runtime roscpp std_msgs 
-  DEPENDS Eigen3
+  CATKIN_DEPENDS message_runtime roscpp std_msgs sensor_msgs
 )
 
 include_directories(
@@ -46,8 +47,13 @@ include_directories(
 ## Libraries
 add_library(kf src/kf.cpp)
 add_dependencies(kf ${catkin_EXPORTED_TARGETS})
+#target_compile_options(kf PRIVATE -Wno-ignored-attributes)
+
+add_library(filter_method src/filter_method.cpp)
+add_dependencies(filter_method ${catkin_EXPORTED_TARGETS})
 
 ## Executables
-add_executable(kf_node src/kf_node.cpp)
-add_dependencies(kf_node ${catkin_EXPORTED_TARGETS})
-target_link_libraries(kf_node ${catkin_LIBRARIES} kf)
+add_executable(state_estimation_node src/state_estimation_node.cpp)
+add_dependencies(state_estimation_node ${catkin_EXPORTED_TARGETS})
+target_link_libraries(state_estimation_node ${catkin_LIBRARIES} kf filter_method)
+#target_compile_options(state_estimation_node PRIVATE -Wno-ignored-attributes)
